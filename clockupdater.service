@@ -1,0 +1,11 @@
+[Unit]
+Description=Update Fclock Clock Time
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/clockupdater
+Environment="UPDATE_URL=http://localhost:9000/clockupdate"
+
+[Install]
+WantedBy=multi-user.target
